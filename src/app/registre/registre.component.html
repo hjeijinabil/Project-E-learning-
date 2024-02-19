@@ -1,0 +1,44 @@
+
+<section class="form-container">
+
+    <form  [formGroup]="FormInput" action="" method="post" enctype="multipart/form-data">
+       <h3>register now</h3>
+       <p>your name <span>*</span></p>
+       <input type="text" name="name" formControlName="name" placeholder="enter your name" required maxlength="50" class="box">
+       
+       <div class="alert alert-danger" *ngIf="!FormInput.pristine && FormInput.controls['name'].errors?.['required']" role="alert">
+
+   first name is required 
+ </div>
+ 
+ 
+       <p>your email <span>*</span></p>
+       <input type="email"formControlName="email" name="email" placeholder="enter your email" required maxlength="50" class="box">
+       
+       
+ 
+ <div class="alert alert-danger" *ngIf="!FormInput.pristine && FormInput.controls['email'].errors?.['email']" role="alert">
+
+   first email is required 
+ </div>
+       <p>your password <span>*</span></p>
+       
+       <input type="password" formControlName="password" name="pass" placeholder="enter your password" required maxlength="20" class="box">
+        
+ <div class="alert alert-danger" *ngIf="!FormInput.pristine && FormInput.controls['password'].errors?.['required']" role="alert">
+
+   first password is required 
+ </div>
+       <p>confirm password <span>*</span></p>
+       <input type="password" formControlName="confirmPassword" name="c_pass" placeholder="confirm your password" required maxlength="20" class="box">
+       <div class="alert alert-danger" *ngIf="passwordMatchValidator()" role="alert">
+        Password confirmation is required and must match the password
+      </div>
+      
+       <p>select profile <span>*</span></p>
+       <input type="file" accept="image/*" required class="box">
+       <input type="submit" value="register new" name="submit" class="btn" (click)="registre ()" [disabled]="FormInput.invalid || this.FormInput.controls['password'].value !== this.FormInput.controls['confirmPassword'].value">
+    </form>
+ 
+   
+   </section>

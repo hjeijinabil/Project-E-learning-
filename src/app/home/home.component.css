@@ -1,0 +1,271 @@
+
+
+
+
+ .home-grid .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 27.5rem);
+    gap:1.5rem;
+    justify-content: center;
+    align-items: flex-start;
+ }
+ 
+ .home-grid .box-container .box{
+    background-color: var(--white);
+    border-radius: .5rem;
+    padding:2rem;
+ }
+ 
+ .home-grid .box-container .box .title{
+    font-size: 2rem;
+    color: var(--black);
+    text-transform: capitalize;
+ }
+ 
+ .home-grid .box-container .box .flex{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 2rem;
+ }
+ 
+ .home-grid .box-container .flex a{
+    background-color: var(--light-bg);
+    border-radius: .5rem;
+    padding: 1rem 1.5rem;
+    font-size: 1.5rem;
+ }
+ 
+ .home-grid .box-container .flex a i{
+    margin-right: 1rem;
+    color:var(--black);
+ }
+ 
+ .home-grid .box-container .flex a span{
+    color:var(--light-color);
+ }
+ 
+ .home-grid .box-container .flex a:hover{
+    background-color: var(--black);
+ }
+ 
+ .home-grid .box-container .flex a:hover span{
+    color:var(--white);
+ }
+ 
+ .home-grid .box-container .flex a:hover i{
+    color:var(--white);
+ }
+ 
+ .home-grid .box-container .tutor{
+    padding: 1rem 0;
+    font-size: 1.8rem;
+    color:var(--light-color);
+    line-height: 2;
+ }
+ 
+ .home-grid .box-container .likes{
+    color:var(--light-color);
+    font-size: 1.7rem;
+    margin-top: 1.5rem;
+ }
+ 
+ .home-grid .box-container .likes span{
+    color:var(--main-color);
+ }
+
+ .courses .box-container{
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+   gap:1.5rem;
+   justify-content: center;
+   align-items: flex-start;
+}
+
+.courses .box-container .box{
+   border-radius: .5rem;
+   background-color: var(--white);
+   padding: 2rem;
+}
+
+.courses .box-container .box .tutor{
+   display: flex;
+   align-items: center;
+   gap: 1.5rem;
+   margin-bottom: 2.5rem;
+}
+
+.courses .box-container .box .tutor img{
+   height: 5rem;
+   width: 5rem;
+   border-radius: 50%;
+   object-fit: cover;
+}
+
+.courses .box-container .box .tutor h3{
+   font-size: 1.8rem;
+   color: var(--black);
+   margin-bottom: .2rem;
+}
+
+.courses .box-container .box .tutor span{
+   font-size: 1.3rem;
+   color:var(--light-color);
+}
+
+.courses .box-container .box .thumb{
+   position: relative;
+}
+
+.courses .box-container .box .thumb span{
+   position: absolute;
+   top:1rem; left: 1rem;
+   border-radius: .5rem;
+   padding: .5rem 1.5rem;
+   background-color: rgba(0,0,0,.3);
+   color: #fff;
+   font-size: 1.5rem;
+}
+
+.courses .box-container .box .thumb img{
+   width: 100%;
+   height: 20rem;
+   object-fit: cover;
+   border-radius: .5rem;
+}
+
+.courses .box-container .box .title{
+   font-size: 2rem;
+   color: var(--black);
+   padding-bottom: .5rem;
+   padding-top: 1rem;
+}
+
+.courses .more-btn{
+   text-align: center;
+   margin-top: 2rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*** Categories & Courses ***/
+.category img,
+.course-item img {
+    transition: .5s;
+}
+
+.category a:hover img,
+.course-item:hover img {
+    transform: scale(1.1);
+}
+
+
+
+/*** Team ***/
+.team-item img {
+   transition: .5s;
+}
+
+.team-item:hover img {
+   transform: scale(1.1);
+}
+
+
+/*** Testimonial ***/
+.testimonial-carousel::before {
+   position: absolute;
+   content: "";
+   top: 0;
+   left: 0;
+   height: 100%;
+   width: 0;
+   background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+   z-index: 1;
+}
+
+.testimonial-carousel::after {
+   position: absolute;
+   content: "";
+   top: 0;
+   right: 0;
+   height: 100%;
+   width: 0;
+   background: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+   z-index: 1;
+}
+
+@media (min-width: 768px) {
+   .testimonial-carousel::before,
+   .testimonial-carousel::after {
+       width: 200px;
+   }
+}
+
+@media (min-width: 992px) {
+   .testimonial-carousel::before,
+   .testimonial-carousel::after {
+       width: 300px;
+   }
+}
+
+.testimonial-carousel .owl-item .testimonial-text,
+.testimonial-carousel .owl-item.center .testimonial-text * {
+   transition: .5s;
+}
+
+.testimonial-carousel .owl-item.center .testimonial-text {
+   background: var(--primary) !important;
+}
+
+.testimonial-carousel .owl-item.center .testimonial-text * {
+   color: #FFFFFF !important;
+}
+
+.testimonial-carousel .owl-dots {
+   margin-top: 24px;
+   display: flex;
+   align-items: flex-end;
+   justify-content: center;
+}
+
+.testimonial-carousel .owl-dot {
+   position: relative;
+   display: inline-block;
+   margin: 0 5px;
+   width: 15px;
+   height: 15px;
+   border: 1px solid #CCCCCC;
+   transition: .5s;
+}
+
+.testimonial-carousel .owl-dot.active {
+   background: var(--primary);
+   border-color: var(--primary);
+}
+
+
+
+
+
+
+
+
+
